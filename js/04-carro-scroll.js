@@ -54,6 +54,20 @@
               [8,28,332,352].forEach((x,i)=>add('path',{
                 d:'M'+x+' '+(180+i*40)+'v130m0 30v55'}
                 ,speed));
+                // FOTO DO CARRO — muda apenas o caminho se trocares a imagem.
+const fotoCarro = document.createElement("img");
+
+fotoCarro.src = "images/carro_phisec_2.png";
+fotoCarro.alt = "";
+fotoCarro.style.cssText = `
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+`;
+
+// Substitui o desenho pela fotografia.
+svg.style.display = "none";
+car.append(fotoCarro);
                 document.body.append(car);
                 const readout=document.createElement('div');
                 readout.className='car-readout';
@@ -68,7 +82,10 @@
                   pending=false;
                   const w=innerWidth,h=innerHeight,y=scrollY,mobile=w<761;
                   const a=statement.offsetTop,b=story.offsetTop,c=b+story.offsetHeight-h;
-                  const base=mobile?Math.min(170,w*.44):Math.min(300,w*.25);
+                  // TAMANHO DO CARRO — aumenta estes valores para ficar maior.
+const base = mobile
+  ? Math.min(280, w * 0.70)  // Telemóvel
+  : Math.min(550, w * 0.45); // Computador
                   const ratio=740/360;
                   car.style.width=base+'px';
                   car.style.height=base*ratio+'px';
