@@ -1,0 +1,104 @@
+/* 03 — ASPETO DO CARRO ANIMADO */
+
+/* Continuous scroll-controlled race car */
+.hero-machine{
+  visibility:hidden}
+  .scroll-car{
+    position:fixed;
+    top:0;
+    left:0;
+    width:280px;
+    height:570px;
+    z-index:8;
+    pointer-events:none;
+    transform-origin:center;
+    will-change:transform,opacity;
+    contain:layout style}
+    .scroll-car svg{
+      width:100%;
+      height:100%;
+      overflow:visible;
+      filter:drop-shadow(0 22px 18px #0007)}
+      .scroll-car .car-shell{
+        fill-opacity:var(--shell,1)}
+        .scroll-car .car-wire{
+          opacity:var(--wire,0)}
+          .scroll-car .car-wheel{
+            stroke:#8a9587}
+            .scroll-car .car-wheel line{
+              stroke:#697365;
+              stroke-width:2}
+              .scroll-car .car-aero{
+                stroke:#bdcbb3;
+                fill:#222c23;
+                fill-opacity:var(--shell,1)}
+                .scroll-car .car-trace{
+                  stroke:#ff5847;
+                  stroke-width:2;
+                  fill:none;
+                  stroke-dasharray:var(--trace,0) 1800;
+                  opacity:var(--wire,0)}
+                  .scroll-car .car-corner{
+                    stroke:#abbfa0;
+                    stroke-width:1;
+                    fill:none;
+                    opacity:var(--wire,0)}
+                    .car-readout{
+                      position:fixed;
+                      left:35px;
+                      bottom:30px;
+                      z-index:20;
+                      pointer-events:none;
+                      font:9px monospace;
+                      letter-spacing:1.5px;
+                      color:#9aa994;
+                      display:flex;
+                      gap:15px;
+                      align-items:center}
+                      .car-readout:before{
+                        content:'';
+                        width:18px;
+                        height:2px;
+                        background:var(--red)}
+                        .car-readout b{
+                          font-weight:400;
+                          color:var(--red)}
+                          .stage-art{
+                            opacity:0}
+                            .stage-caption{
+                              position:relative;
+                              z-index:9}
+                              .scroll-car .speed-line{
+                                stroke:#c0cfb5;
+                                stroke-width:1;
+                                opacity:var(--speed,0)}
+                                @media(max-width:760px){
+                                  .scroll-car{
+                                    z-index:3}
+                                    .hero h1,.hero .intro,.herohead,.intro-statement h2,.intro-statement .eyebrow,.statement-bottom{
+                                      position:relative;
+                                      z-index:5}
+                                      .car-readout{
+                                        left:20px;
+                                        bottom:15px;
+                                        font-size:8px;
+                                        gap:8px}
+                                        .work-stage{
+                                          background-color:#111713e8}
+                                          .stage-intro,.work-panels{
+                                            position:relative;
+                                            z-index:5}
+                                            .stage-caption{
+                                              max-width:65%;
+                                              line-height:1.7}
+                                            }
+                                            @media(prefers-reduced-motion:reduce){
+                                              .scroll-car{
+                                                display:none}
+                                                .hero-machine{
+                                                  visibility:visible}
+                                                  .stage-art{
+                                                    opacity:1}
+                                                    .car-readout{
+                                                      display:none}
+                                                    }
